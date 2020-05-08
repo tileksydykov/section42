@@ -1,6 +1,13 @@
-package io.flaterlab.comments.models;
+package io.flaterlab.comments.data.repo;
+
+import io.flaterlab.comments.data.models.Comment;
+import io.flaterlab.comments.data.models.Page;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
-public interface TableRepository extends JpaRepository<User, Integer> {
-    List<User> findByName(String text);
+public interface CommentRepository extends JpaRepository<Comment, Integer> {
+    List<Comment> findByPageId(int p);
 }

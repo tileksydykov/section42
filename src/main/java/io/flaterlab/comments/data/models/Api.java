@@ -1,8 +1,8 @@
-package io.flaterlab.comments.models;
+package io.flaterlab.comments.data.models;
 
 public class Api {
     String name = "Section42";
-    String version = "0.1";
+    String version;
     String info = "This is base for section42";
 
     public Api(String version) {
