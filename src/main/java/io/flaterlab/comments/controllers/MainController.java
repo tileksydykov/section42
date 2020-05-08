@@ -22,7 +22,8 @@ public class MainController {
         return new Api("1.0");
     }
 
-    @RequestMapping(value = "/{link}", method = RequestMethod.GET)
+    @CrossOrigin
+    @RequestMapping(value = "/api/{link}", method = RequestMethod.GET)
     public List<Comment> getComment(@PathVariable String link){
         Page page = pageRepository.findByLink(link);
         if (page == null){
@@ -31,7 +32,8 @@ public class MainController {
         return commentRepository.findByPageId(page.getId());
     }
 
-    @RequestMapping(value = "/{link}", method = RequestMethod.POST)
+    @CrossOrigin
+    @RequestMapping(value = "/api/{link}", method = RequestMethod.POST)
     public Comment postComment(@PathVariable String link, @RequestBody FrontComment frontComment){
         Page page = pageRepository.findByLink(link);
         if (page == null){
